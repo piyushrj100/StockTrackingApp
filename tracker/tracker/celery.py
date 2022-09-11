@@ -12,13 +12,13 @@ app.conf.update(timezone='Asia/Kolkata')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
 app.conf.beat_schedule= {
-    'every-10-seconds' : {
-        'task' : 'mainapp.tasks.update_stock',
-        'schedule' : 10,
-        'args' : (['RELIANCE.NS','BAJAJFINSV.NS'],)
+    # 'every-10-seconds' : {
+    #     'task' : 'mainapp.tasks.update_stock',
+    #     'schedule' : 10,
+    #     'args' : (['RELIANCE.NS','BAJAJFINSV.NS'],)
 
 
-    },
+    # },
 }
 app.autodiscover_tasks()
 @app.task(bind=True)

@@ -48,4 +48,4 @@ def stockTracker(request) :
     time_taken= end-start
     print(time_taken)
     print(data)
-    return render(request, 'mainapp/stocktracker.html', {'data' : data})
+    return render(request, 'mainapp/stocktracker.html', {'data' : data,'room_name' : 'track'})
