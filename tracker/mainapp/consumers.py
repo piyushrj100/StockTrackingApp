@@ -62,13 +62,13 @@ class StockConsumer(AsyncWebsocketConsumer):
         await self.channel_layer.group_send(
             self.room_group_name,
             {
-                'type': 'stock_update',
+                'type': 'send_update',
                 'message': message
             }
         )
 
     # Receive message from room group
-    async def stock_update(self, event):
+    async def send_stock_update(self, event):
         message = event['message']
 
         # Send message to WebSocket
